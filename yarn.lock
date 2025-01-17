@@ -125,6 +125,21 @@
     "@react-types/button" "3.10.1"
     "@react-types/shared" "3.26.0"
 
+"@heroui/card@^2.2.9":
+  version "2.2.9"
+  resolved "https://registry.yarnpkg.com/@heroui/card/-/card-2.2.9.tgz#6465d08ba52836268c6558b8162c073f0762ff2e"
+  integrity sha512-rNWdrsR9e/7zsC7ZceUirftKOFrwiLQWqRk4NGKanTGo/0lBlQOVPrZBWHNJtd3ylVMoRHqF4nH65dII9SIc4Q==
+  dependencies:
+    "@heroui/react-utils" "2.1.3"
+    "@heroui/ripple" "2.2.7"
+    "@heroui/shared-utils" "2.1.2"
+    "@heroui/use-aria-button" "2.2.4"
+    "@react-aria/button" "3.11.0"
+    "@react-aria/focus" "3.19.0"
+    "@react-aria/interactions" "3.22.5"
+    "@react-aria/utils" "3.26.0"
+    "@react-types/shared" "3.26.0"
+
 "@heroui/code@2.2.6":
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/@heroui/code/-/code-2.2.6.tgz#a65fe3db212412a79a8f625f2e28fe81b47d56e0"
@@ -171,6 +186,15 @@
     "@heroui/shared-utils" "2.1.2"
     "@heroui/system" "2.4.6"
     "@heroui/use-measure" "2.1.1"
+
+"@heroui/image@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@heroui/image/-/image-2.2.5.tgz#3fb4ef88665cad51f684cace21c6dd9ff0fbeb3e"
+  integrity sha512-oR37yFhAgMjnSyNV3eoD17zswN782R/4n0dW9pWk6JnlPi2A6gvnpnbo9EIP3f245UchkGkTC3fLb+IzoB1t3w==
+  dependencies:
+    "@heroui/react-utils" "2.1.3"
+    "@heroui/shared-utils" "2.1.2"
+    "@heroui/use-image" "2.1.2"
 
 "@heroui/input@2.4.8":
   version "2.4.8"
@@ -406,6 +430,14 @@
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@heroui/use-clipboard/-/use-clipboard-2.1.2.tgz#b93ce747e748ba8c7cb1897b127aff3ec2571754"
   integrity sha512-D0TG7QtS7QetDJAb6h4AnxXcjgFcK1Ldt+H+W3ZPfjANGSGeQTh4WgO4jiTbETJMF8V6Xbplu9IUd6daC+J/YA==
+
+"@heroui/use-image@2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@heroui/use-image/-/use-image-2.1.2.tgz#73972f0a5f2219beb249cac83824b0471d79970d"
+  integrity sha512-ogpInDRCPbbqErEdm4rKlcZKRZal+BC44TE3kW+WXxC85tdJrq4831JaQ8qlywlSfPM/DD2YTBqoSfT7wa6KMA==
+  dependencies:
+    "@heroui/react-utils" "2.1.3"
+    "@heroui/use-safe-layout-effect" "2.1.1"
 
 "@heroui/use-is-mobile@2.2.2":
   version "2.2.2"
@@ -1928,6 +1960,11 @@ data-view-byte-offset@^1.0.1:
     call-bound "^1.0.2"
     es-errors "^1.3.0"
     is-data-view "^1.0.1"
+
+date-fns@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-4.1.0.tgz#64b3d83fff5aa80438f5b1a633c2e83b8a1c2d14"
+  integrity sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==
 
 debug@^3.2.7:
   version "3.2.7"
