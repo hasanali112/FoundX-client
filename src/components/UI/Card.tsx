@@ -3,8 +3,10 @@ import { Image } from "@heroui/image";
 import { Card as NextUiCard, CardFooter, CardHeader } from "@heroui/card";
 import { format } from "date-fns";
 
-const Card = ({ post }: any) => {
-  const { title, category, images, city, dateFound } = post;
+import { IPost } from "@/src/types";
+
+const Card = ({ post }: { post: IPost }) => {
+  const { title, category, images, city, dateFound } = post || {};
 
   return (
     <NextUiCard isFooterBlurred className="h-[300px] w-full">
