@@ -308,6 +308,14 @@
   resolved "https://registry.yarnpkg.com/@heroui/shared-utils/-/shared-utils-2.1.2.tgz#0b7243cc9060e1089fcbdeb33fcceee90d73c419"
   integrity sha512-i058k/jP1FsZIJlMrpMTchnGH+jx07yhvZjC9zsxvQX/zlRcoRMpxAC5qi6/p2UYrnFDjiPY0WWuDdCML7Gtew==
 
+"@heroui/skeleton@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@heroui/skeleton/-/skeleton-2.2.5.tgz#942adfbb34df5f15a462bf0b454ad3ef53fe8c30"
+  integrity sha512-SkzLG51ufFrYPNJmxzF5R4Vuek9pZV3piNlypOrILA7H8Wib1ym/ty+udxRcLavF8HfDR1YLU6XZOAxP6WiyeQ==
+  dependencies:
+    "@heroui/react-utils" "2.1.3"
+    "@heroui/shared-utils" "2.1.2"
+
 "@heroui/snippet@2.2.10":
   version "2.2.10"
   resolved "https://registry.yarnpkg.com/@heroui/snippet/-/snippet-2.2.10.tgz#e394899ed6746cd18009c254bd701fe97e0a8f21"
