@@ -8,9 +8,17 @@ import Link from "next/link";
 import FXInput from "@/src/components/Form/FXInput";
 import FXForm from "@/src/components/Form/FXForm";
 import registerValidationSchema from "@/src/schema/register.schema";
-import { registerUser } from "@/src/services/AuthService";
+import { useUserRegister } from "@/src/hooks/auth.hook";
 
 const Register = () => {
+  const { mutate: handleUserRegistration, isPending } = useUserRegister();
+
+  // useEffect(() => {
+  //   if (isPending) {
+
+  //   }
+  // }, [isPending]);
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     const userData = {
       ...data,
@@ -18,8 +26,12 @@ const Register = () => {
         "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
     };
 
-    registerUser(userData);
+    handleUserRegistration(userData);
   };
+
+  if (isPending) {
+    //handle loading
+  }
 
   return (
     <div className="flex h-[calc(100vh-100px)] flex-col items-center justify-center">
