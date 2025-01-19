@@ -16,7 +16,7 @@ export function middleware(request: NextRequest) {
 
   const user = {
     name: "John Doe",
-    role: "ADMIN",
+    role: "",
   };
 
   // const user = null;
@@ -41,5 +41,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/profile", "/admin", "/login", "/register"],
+  matcher: ["/profile", "/admin"],
 };
