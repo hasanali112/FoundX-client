@@ -2,9 +2,9 @@
 
 import { FieldValues } from "react-hook-form";
 import { cookies } from "next/headers";
+import { jwtDecode } from "jwt-decode";
 
 import axiosInstance from "@/src/libs/AxiosInstance";
-import { jwtDecode } from "jwt-decode";
 
 export const registerUser = async (userData: FieldValues) => {
   try {
@@ -56,6 +56,7 @@ export const getCurrentUser = async () => {
       mobileNumber: decodedToken.mobileNumber,
       role: decodedToken.role,
       status: decodedToken.status,
+      profilePhoto: decodedToken.profilePhoto,
     };
   }
 
