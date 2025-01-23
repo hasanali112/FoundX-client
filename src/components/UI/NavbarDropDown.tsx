@@ -8,6 +8,7 @@ import {
 } from "@heroui/dropdown";
 import { Avatar } from "@heroui/avatar";
 import { useRouter } from "next/navigation";
+import { logout } from "@/src/services/AuthService";
 
 const NavbarDropDown = () => {
   const router = useRouter();
@@ -53,7 +54,9 @@ const NavbarDropDown = () => {
           Claim Request
         </DropdownItem>
 
-        <DropdownItem key="logout">Logout</DropdownItem>
+        <DropdownItem onPress={() => logout()} key="logout">
+          Logout
+        </DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );

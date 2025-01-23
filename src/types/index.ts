@@ -15,15 +15,15 @@ export interface IPost {
   status: string;
   isReported: boolean;
   reportCount: number;
-  category: Category;
-  user: User;
+  category: ICategory;
+  user: IUser;
   questions: string[];
   createdAt: string;
   updatedAt: string;
   __v: number;
 }
 
-export interface Category {
+export interface ICategory {
   _id: string;
   name: string;
   postCount: number;
@@ -33,7 +33,7 @@ export interface Category {
   __v: number;
 }
 
-export interface User {
+export interface IUser {
   _id: string;
   name: string;
   role: string;
@@ -41,7 +41,7 @@ export interface User {
   status: string;
   mobileNumber: string;
   profilePhoto: string;
-  createdAt: string;
-  updatedAt: string;
-  __v: number;
+  createdAt?: string;
+  updatedAt?: string;
+  __v?: number;
 }
