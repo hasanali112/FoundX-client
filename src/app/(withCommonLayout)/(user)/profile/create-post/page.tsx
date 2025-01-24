@@ -11,6 +11,8 @@ import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
 
 import FXInput from "@/src/components/Form/FXInput";
+import FXDatePicker from "@/src/components/Form/FXDatePicker";
+import dateToIso from "@/src/utils/dateToISO";
 
 const CreatePost = () => {
   const methods = useForm();
@@ -23,7 +25,15 @@ const CreatePost = () => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
+    const postData = {
+      ...data,
+      questions: data.questions.map(
+        (question: { value: string }) => question.value
+      ),
+      dateFound: dateToIso(data.dateFound),
+    };
+
+    console.log(postData);
   };
 
   const handleFieldAppend = () => {
@@ -34,7 +44,20 @@ const CreatePost = () => {
     <div>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <FXInput name="title" label="Title" />
+          <div className="flex flex-wrap gap-2 py-2">
+            <div className="min-w-fit flex-1">
+              <FXInput label="Title" name="title" />
+            </div>
+            <div className="min-w-fit flex-1">
+              <FXDatePicker label="Found Date" name="dateFound" />
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 py-2">
+            <div className="min-w-fit flex-1">
+              <FXInput label="Location" name="location" />
+            </div>
+            <div className="min-w-fit flex-1"></div>
+          </div>
 
           <Divider className="my-5" />
 

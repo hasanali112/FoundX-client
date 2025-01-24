@@ -1,16 +1,12 @@
 "use client";
 
-import { Input } from "@heroui/input";
 import { useFormContext } from "react-hook-form";
 
-interface IProps {
-  variant?: "flat" | "bordered" | "faded" | "underlined";
-  size?: "sm" | "md" | "lg";
-  type?: string;
-  label?: string;
-  name: string;
-}
+import { IInput } from "@/src/types";
 
+import { Input } from "@heroui/input";
+
+interface IProps extends IInput {}
 const FXInput = ({
   variant = "bordered",
   size = "md",

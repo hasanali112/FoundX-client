@@ -7,13 +7,15 @@ import {
   DropdownTrigger,
 } from "@heroui/dropdown";
 import { Avatar } from "@heroui/avatar";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { logout } from "@/src/services/AuthService";
 import { useUser } from "@/src/context/user.provider";
+import { protectedRoutes } from "@/src/constant";
 
 const NavbarDropDown = () => {
   const router = useRouter();
+  const pathName = usePathname();
   const { user, setIsLoading } = useUser();
 
   const handleRouter = (pathName: string) => {
@@ -23,6 +25,10 @@ const NavbarDropDown = () => {
   const handleLogout = () => {
     logout();
     setIsLoading(true);
+
+    if (protectedRoutes.some((route) => pathName.match(route))) {
+      router.push("/");
+    }
   };
 
   return (
