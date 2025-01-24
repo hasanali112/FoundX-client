@@ -53,4 +53,5 @@ export interface IInput {
   name: string;
   variant?: "flat" | "bordered" | "faded" | "underlined";
   size?: "sm" | "md" | "lg";
+  disabled?: boolean;
 }
