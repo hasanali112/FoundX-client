@@ -1,10 +1,10 @@
 "use client";
 
 import { useFormContext } from "react-hook-form";
+import { Input } from "@heroui/input";
 
 import { IInput } from "@/src/types";
 
-import { Input } from "@heroui/input";
 
 interface IProps extends IInput {}
 const FXInput = ({

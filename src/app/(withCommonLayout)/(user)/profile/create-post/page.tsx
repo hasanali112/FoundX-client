@@ -13,6 +13,7 @@ import { Divider } from "@heroui/divider";
 import FXInput from "@/src/components/Form/FXInput";
 import FXDatePicker from "@/src/components/Form/FXDatePicker";
 import dateToIso from "@/src/utils/dateToISO";
+import FXSelect from "@/src/components/Form/FXSelect";
 
 const CreatePost = () => {
   const methods = useForm();
@@ -40,6 +41,12 @@ const CreatePost = () => {
     append({ name: "questions" });
   };
 
+  const cityOptions = [
+    { key: "dhaka", label: "Dhaka" },
+    { key: "chittagong", label: "Chittagong" },
+    { key: "sylhet", label: "Sylhet" },
+  ];
+
   return (
     <div>
       <FormProvider {...methods}>
@@ -56,7 +63,9 @@ const CreatePost = () => {
             <div className="min-w-fit flex-1">
               <FXInput label="Location" name="location" />
             </div>
-            <div className="min-w-fit flex-1"></div>
+            <div className="min-w-fit flex-1">
+              <FXSelect label="Select city" name="city" options={cityOptions} />
+            </div>
           </div>
 
           <Divider className="my-5" />
