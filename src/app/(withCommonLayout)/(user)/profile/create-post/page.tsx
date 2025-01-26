@@ -10,14 +10,17 @@ import {
 import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
 import { allDistict } from "@bangladeshi/bangladesh-address";
+import Image from "next/image";
+import { Textarea } from "@heroui/input";
+import { ChangeEvent, useState } from "react";
 
 import FXInput from "@/src/components/Form/FXInput";
 import FXDatePicker from "@/src/components/Form/FXDatePicker";
 import dateToIso from "@/src/utils/dateToISO";
 import FXSelect from "@/src/components/Form/FXSelect";
 import { useGetCategoris } from "@/src/hooks/categories.hook";
-import { ChangeEvent, useState } from "react";
-import Image from "next/image";
+import { useUser } from "@/src/context/user.provider";
+import { useCreatePost } from "@/src/hooks/post.hook";
 
 const CreatePost = () => {
   const [imageFile, setImageFile] = useState<File[] | []>([]);
@@ -27,6 +30,10 @@ const CreatePost = () => {
     isLoading: categoryLoading,
     isSuccess: categorySuccess,
   } = useGetCategoris();
+
+  const { mutate: handleCreatePost } = useCreatePost();
+
+  const { user } = useUser();
 
   let categoryOptions: { key: string; label: string }[] = [];
 
@@ -49,15 +56,25 @@ const CreatePost = () => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const formdata = new FormData();
     const postData = {
       ...data,
       questions: data.questions.map(
         (question: { value: string }) => question.value
       ),
       dateFound: dateToIso(data.dateFound),
+      user: user!._id,
     };
 
+    formdata.append("data", JSON.stringify(postData));
+
+    for (const image of imageFile) {
+      formdata.append("itemImages", image);
+    }
+
     console.log(postData);
+
+    handleCreatePost(formdata);
   };
 
   const handleFieldAppend = () => {
@@ -149,6 +166,11 @@ const CreatePost = () => {
                     />
                   </div>
                 ))}
+            </div>
+            <div className="flex flex-wrap gap-2 py-2">
+              <div className="min-w-fit flex-1">
+                <Textarea label="Description" name="description" />
+              </div>
             </div>
           </div>
 
